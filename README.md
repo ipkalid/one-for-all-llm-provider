@@ -76,4 +76,4 @@ npm run build
 
 ## License
 
-MIT (c) Denizhan Dakılır
+MIT (c)
