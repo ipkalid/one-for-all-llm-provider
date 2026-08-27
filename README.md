@@ -1,5 +1,7 @@
 # One for All LLM Provider
 
+Version 1.0.0
+
 Use models from the live [models.dev](https://models.dev) catalog in VS Code chat and agents with your own provider credentials.
 
 The extension downloads and caches the catalog instead of hard-coding a model list. Add the providers you use, choose which of their models should appear, and then select those models from VS Code's normal model picker.
