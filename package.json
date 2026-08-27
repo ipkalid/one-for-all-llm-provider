@@ -3,7 +3,7 @@
   "displayName": "One for All LLM Provider",
   "description": "Use models from providers in the models.dev catalog with VS Code agents",
   "version": "1.0.0",
-  "publisher": "ipkalid",
+  "publisher": "KhalidAlhazmi",
   "license": "MIT",
   "icon": "images/icon.png",
   "repository": {
