@@ -3,9 +3,18 @@
   "displayName": "One for All LLM Provider",
   "description": "Use models from providers in the models.dev catalog with VS Code agents",
   "version": "0.7.1",
-  "publisher": "DenizhanDaklr",
+  "publisher": "ipkalid",
   "license": "MIT",
   "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ipkalid/one-for-all-llm-provider.git"
+  },
+  "homepage": "https://github.com/ipkalid/one-for-all-llm-provider#readme",
+  "bugs": {
+    "url": "https://github.com/ipkalid/one-for-all-llm-provider/issues"
+  },
+  "pricing": "Free",
   "engines": {
     "vscode": "^1.116.0"
   },
