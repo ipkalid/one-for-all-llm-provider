@@ -1,0 +1,134 @@
+{
+  "name": "one-for-all-llm-provider",
+  "displayName": "One for All LLM Provider",
+  "description": "Use models from providers in the models.dev catalog with VS Code agents",
+  "version": "0.7.1",
+  "publisher": "DenizhanDaklr",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.116.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "keywords": [
+    "llm",
+    "models.dev",
+    "multi-provider",
+    "byok",
+    "ai",
+    "chat",
+    "copilot"
+  ],
+  "main": "./out/extension.js",
+  "extensionKind": [
+    "ui"
+  ],
+  "activationEvents": [
+    "onLanguageModelChatProvider:one-for-all-llm-provider"
+  ],
+  "contributes": {
+    "languageModelChatProviders": [
+      {
+        "vendor": "one-for-all-llm-provider",
+        "displayName": "One for All LLM Provider",
+        "managementCommand": "one-for-all-llm-provider.manage"
+      }
+    ],
+    "configuration": {
+      "title": "One for All LLM Provider",
+      "properties": {
+        "one-for-all-llm-provider.catalogUrl": {
+          "type": "string",
+          "format": "uri",
+          "default": "https://models.dev/api.json",
+          "description": "models.dev-compatible provider catalog URL.",
+          "scope": "application"
+        },
+        "one-for-all-llm-provider.catalogCacheHours": {
+          "type": "number",
+          "default": 24,
+          "minimum": 1,
+          "maximum": 168,
+          "description": "How long to cache the downloaded catalog before refreshing it.",
+          "scope": "application"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "one-for-all-llm-provider.manage",
+        "title": "One for All LLM Provider: Manage Providers"
+      },
+      {
+        "command": "one-for-all-llm-provider.configureProvider",
+        "title": "One for All LLM Provider: Add or Configure Provider"
+      },
+      {
+        "command": "one-for-all-llm-provider.selectModels",
+        "title": "One for All LLM Provider: Select Provider Models"
+      },
+      {
+        "command": "one-for-all-llm-provider.removeProvider",
+        "title": "One for All LLM Provider: Remove Provider"
+      },
+      {
+        "command": "one-for-all-llm-provider.refreshCatalog",
+        "title": "One for All LLM Provider: Refresh models.dev Catalog"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run bundle",
+    "build": "npm run bundle",
+    "bundle": "node bundle.mjs",
+    "compile": "tsc",
+    "test": "node --test tests/*.test.cjs",
+    "watch": "tsc -watch -p ./",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/vscode": "1.116.0",
+    "esbuild": "^0.28.1",
+    "eslint": "9.39.2",
+    "gts": "^7.0.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@ai-sdk/amazon-bedrock": "^5.0.66",
+    "@ai-sdk/anthropic": "^4.0.44",
+    "@ai-sdk/azure": "^4.0.52",
+    "@ai-sdk/cerebras": "^3.0.39",
+    "@ai-sdk/cohere": "^4.0.33",
+    "@ai-sdk/deepinfra": "^3.0.39",
+    "@ai-sdk/gateway": "^4.0.67",
+    "@ai-sdk/google": "^4.0.55",
+    "@ai-sdk/google-vertex": "^5.0.67",
+    "@ai-sdk/groq": "^4.0.33",
+    "@ai-sdk/mistral": "^4.0.35",
+    "@ai-sdk/openai": "^4.0.50",
+    "@ai-sdk/openai-compatible": "^3.0.39",
+    "@ai-sdk/perplexity": "^4.0.34",
+    "@ai-sdk/togetherai": "^3.0.40",
+    "@ai-sdk/vercel": "^2.0.75",
+    "@ai-sdk/xai": "^4.0.48",
+    "@openrouter/ai-sdk-provider": "^3.0.0",
+    "@saladtechnologies-oss/ai-sdk-provider": "^0.1.0",
+    "ai": "^7.0.83",
+    "ai-gateway-provider": "^4.0.0",
+    "secure-json-parse": "^4.1.0",
+    "zod": "^4.4.3"
+  },
+  "overrides": {
+    "@openrouter/ai-sdk-provider": "$@openrouter/ai-sdk-provider",
+    "tmp": "0.2.7"
+  }
+}
